@@ -138,7 +138,7 @@ else if (yAxis > 510) {
    myservo.write(servo_angle); 
   }
 
-/*
+
       Serial.print("X = ");
       Serial.print(xAxis);
       Serial.print(" Y = ");  
@@ -147,7 +147,6 @@ else if (yAxis > 510) {
       Serial.print(servo_angle);
       Serial.print(" Speed = ");  
       Serial.println(speed);
-      /*
       Serial.print(" Up = ");
       Serial.print(joystick[2]);
       Serial.print(" Right = ");  
@@ -156,7 +155,7 @@ else if (yAxis > 510) {
       Serial.print(joystick[4]);
       Serial.print(" Left = ");  
       Serial.print(joystick[5]);
-      */
+      
 
       } 
   
