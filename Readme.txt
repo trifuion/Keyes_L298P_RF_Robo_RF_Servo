@@ -1,4 +1,4 @@
 Acesta este un fisier help
-New added text
+New 
 third line added
 asdasd
