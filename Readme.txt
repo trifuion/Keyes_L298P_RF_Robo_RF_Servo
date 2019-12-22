@@ -1,6 +1,6 @@
 Arduino code for an robot (car) controlled via RF remote control
 
-Parts utilized in this project:
+Parts utilised in this project:
 
 Car parts:
 - Arduino Mega
