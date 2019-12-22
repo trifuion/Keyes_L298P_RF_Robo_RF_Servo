@@ -81,52 +81,59 @@ void loop()
  if (yAxis < 500 || buttonUp==0) {
     // Motors backward
     // Convert the declining Y-axis readings for going backward from 470 to 0 into 0 to 255 value for the PWM signal for increasing the motor speed 
-    speed  = map(yAxis, 500, 0, 0, 255);
-    Serial.print(" Speed reverse = ");  
-    Serial.println(speed);
-    if (buttonUp=0)
+    
+    if (yAxis < 500)
+    {speed  = map(yAxis, 500, 0, 30, 220);}
+    else
+    {speed=0;}
+
+    if (buttonUp==0)
     {speedb=110;}
     else
     {speedb=0;}
+
+    Serial.print(" Speed reverse = ");  
+    Serial.println(speed+speedb);
     
     digitalWrite(right_motor_direction,LOW);
     analogWrite(right_motor_PWM, speed+speedb); 
     digitalWrite(left_motor_direction, LOW);
     analogWrite(left_motor_PWM, speed+speedb);
-
-    //delay(30);
   }
 else if (yAxis > 510 || buttonDown==0) {
     // Motors forward
     // Convert the increasing Y-axis readings for going forward from 550 to 1023 into 0 to 255 value for the PWM signal for increasing the motor speed
-    speed  = map(yAxis, 510, 1023, 0, 255);
+    //  speed  = map(yAxis, 510, 1023, 30, 220);
     
-    Serial.print(" Speed forward = ");  
-    Serial.println(speed);
-    
-    if (buttonDown=0)
-    {speedb=110;}
+    if (yAxis > 510)
+    {speed  = map(yAxis, 510, 1023, 30, 220);}
+    else
+    {speed=0;}
+        
+    if (buttonDown==0)
+    {speedb=170;}
     else
     {speedb=0;}
+
+    Serial.print(" Speed forward = ");  
+    Serial.println(speed+speedb);
+    
     digitalWrite(right_motor_direction,HIGH);
     analogWrite(right_motor_PWM, speed+speedb); 
     digitalWrite(left_motor_direction, HIGH);
     analogWrite(left_motor_PWM, speed+speedb);
-
-    //delay(30);
   }
   // If joystick stays in middle the motors are not moving
   else {
     speed  = 0;
     Serial.print(" Speed zero = ");  
-    Serial.println(speed);
+    Serial.println(speed+speedb);
     
     digitalWrite(right_motor_direction,LOW);
     analogWrite(right_motor_PWM, speed);
     digitalWrite(left_motor_direction, LOW);
     analogWrite(left_motor_PWM, speed);
-    
-    //delay(30);
+
   }
 
 // X-axis used for left and right control
@@ -135,6 +142,7 @@ else if (yAxis > 510 || buttonDown==0) {
     servo_angle = map(xAxis, 0, 1023, 105, 70);
    myservo.write(servo_angle); 
   } 
+      /*
       Serial.print(" Servo = ");  
       Serial.print(servo_angle);
       Serial.print("X = ");
@@ -151,6 +159,6 @@ else if (yAxis > 510 || buttonDown==0) {
       Serial.print(joystick[4]);
       Serial.print(" Left = ");  
       Serial.println(joystick[5]);
-    
+    */
       } 
   
