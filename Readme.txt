@@ -14,3 +14,6 @@ Remote control parts:
 - Funduino joystick shield V1.A
 
 
+USB communication between Arduini - Raspberry to be investigated
+https://www.instructables.com/id/Raspberry-Pi-Arduino-Serial-Communication/
+
