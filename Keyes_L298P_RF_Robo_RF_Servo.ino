@@ -144,16 +144,17 @@ void loop()
       int E_BTN = joystick[6];
       int F_BTN = joystick[7];
 
-      /*
       if (E_BTN==0)
       {
       set_speed = set_speed+5;
+      delay(0.5);
       }
       else if (F_BTN==0)
       {
       set_speed = set_speed-5;
+      delay(0.5);
       }
-      */
+ 
 // Y-axis used for forward and backward control  
  if (yAxis < 500 || buttonUp==0) {
     // Motors backward
@@ -180,7 +181,7 @@ void loop()
 
       display.clearDisplay();
 
-  display.setTextSize(2);             // Normal 1:1 pixel scale
+  display.setTextSize(1);             // Normal 1:1 pixel scale
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);             // Start at top-left corner
   
@@ -188,10 +189,12 @@ void loop()
   // display.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Draw 'inverse' text
   // display.println(3.141592);
 
-  display.setTextSize(2);             // Draw 2X-scale text
+  display.setTextSize(1);             // Draw 2X-scale text
   display.setTextColor(SSD1306_WHITE);
   display.print(F("set Speed: ")); display.println(set_speed);
   display.print(F("Speed: ")); display.println(speed+speedb);
+  display.print(F("servo angle: ")); display.println(servo_angle);
+  
 
   display.display();
   }
@@ -220,7 +223,7 @@ else if (yAxis > 510 || buttonDown==0) {
 
   display.clearDisplay();
 
-  display.setTextSize(2);             // Normal 1:1 pixel scale
+  display.setTextSize(1);             // Normal 1:1 pixel scale
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);             // Start at top-left corner
   
@@ -228,11 +231,11 @@ else if (yAxis > 510 || buttonDown==0) {
   // display.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Draw 'inverse' text
   // display.println(3.141592);
 
-  display.setTextSize(2);             // Draw 2X-scale text
+  display.setTextSize(1);             // Draw 2X-scale text
   display.setTextColor(SSD1306_WHITE);
   display.print(F("set Speed: ")); display.println(set_speed);
   display.print(F("Speed: ")); display.println(speed+speedb);
-
+  display.print(F("servo angle: ")); display.println(servo_angle);
   display.display();
     
   }
@@ -250,7 +253,7 @@ else if (yAxis > 510 || buttonDown==0) {
 
   display.clearDisplay();
 
-  display.setTextSize(2);             // Normal 1:1 pixel scale
+  display.setTextSize(1);             // Normal 1:1 pixel scale
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);             // Start at top-left corner
   
@@ -258,11 +261,11 @@ else if (yAxis > 510 || buttonDown==0) {
   // display.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Draw 'inverse' text
   // display.println(3.141592);
 
-  display.setTextSize(2);             // Draw 2X-scale text
+  display.setTextSize(1);             // Draw 2X-scale text
   display.setTextColor(SSD1306_WHITE);
   display.print(F("set Speed: ")); display.println(set_speed);
   display.print(F("Speed: ")); display.println(speed);
-
+  display.print(F("servo angle: ")); display.println(servo_angle);
   display.display();
 
   }
