@@ -147,12 +147,12 @@ void loop()
       if (E_BTN==0)
       {
       set_speed = set_speed+5;
-      delay(0.5);
+      delay(200);
       }
       else if (F_BTN==0)
       {
       set_speed = set_speed-5;
-      delay(0.5);
+      delay(200);
       }
  
 // Y-axis used for forward and backward control  
@@ -169,23 +169,21 @@ void loop()
     {speedb=set_speed-30;}
     else
     {speedb=0;}
-/*
+
     Serial.print(" Speed reverse = ");  
     Serial.println(speed+speedb);
-  */  
+
     digitalWrite(right_motor_direction,LOW);
     analogWrite(right_motor_PWM, speed+speedb); 
     digitalWrite(left_motor_direction, LOW);
     analogWrite(left_motor_PWM, speed+speedb);
 
-
-      display.clearDisplay();
-
-  display.setTextSize(1);             // Normal 1:1 pixel scale
-  display.setTextColor(SSD1306_WHITE);        // Draw white text
-  display.setCursor(0,0);             // Start at top-left corner
+    display.clearDisplay();
+    display.setTextSize(1);             // Normal 1:1 pixel scale
+    display.setTextColor(SSD1306_WHITE);        // Draw white text
+    display.setCursor(0,0);             // Start at top-left corner
   
-  //  display.println(F("Speed"));
+  // display.println(F("Speed"));
   // display.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Draw 'inverse' text
   // display.println(3.141592);
 
@@ -212,10 +210,10 @@ else if (yAxis > 510 || buttonDown==0) {
     {speedb=set_speed+30;}
     else
     {speedb=0;}
-/*
+
     Serial.print(" Speed forward = ");  
     Serial.println(speed+speedb);
-    */
+   
     digitalWrite(right_motor_direction,HIGH);
     analogWrite(right_motor_PWM, speed+speedb); 
     digitalWrite(left_motor_direction, HIGH);
@@ -241,11 +239,11 @@ else if (yAxis > 510 || buttonDown==0) {
   }
   // If joystick stays in middle the motors are not moving
   else {
-    /*
+    
     speed  = 0;
     Serial.print(" Speed zero = ");  
     Serial.println(speed+speedb);
-    */
+    
     digitalWrite(right_motor_direction,LOW);
     analogWrite(right_motor_PWM, speed);
     digitalWrite(left_motor_direction, LOW);
@@ -276,12 +274,12 @@ else if (yAxis > 510 || buttonDown==0) {
     servo_angle = xAxis;
     servo_angle = map(xAxis, 0, 1023, 105, 70);
    myservo.write(servo_angle); 
-  } 
-      
-      //Serial.print(" Servo = ");  
+  }
+} 
+     /*
+      Serial.print(" Servo = ");  
       Serial.print(servo_angle);
-      delay(33);
-     /* Serial.print("X = ");
+      Serial.print(" X = ");
       Serial.print(xAxis);
       Serial.print(" Y = ");  
       Serial.print(yAxis);
@@ -295,27 +293,5 @@ else if (yAxis > 510 || buttonDown==0) {
       Serial.print(joystick[4]);
       Serial.print(" Left = ");  
       Serial.println(joystick[5]);
-    */
-      } 
-
-/*
-  void testdrawstyles(void) {
-  display.clearDisplay();
-
-  display.setTextSize(2);             // Normal 1:1 pixel scale
-  display.setTextColor(SSD1306_WHITE);        // Draw white text
-  display.setCursor(0,0);             // Start at top-left corner
-  display.println(F("Hello, world!"));
-
-  display.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Draw 'inverse' text
-  display.println(3.141592);
-
-  display.setTextSize(2);             // Draw 2X-scale text
-  display.setTextColor(SSD1306_WHITE);
-  display.print(F("0x")); display.println(speedb, HEX);
-
-  display.display();
-  delay(2000);
-}
 */
-  
+      
