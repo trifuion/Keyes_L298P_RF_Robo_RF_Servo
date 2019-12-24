@@ -89,7 +89,7 @@ void setup()
   pinMode(right_motor_direction, OUTPUT);
   pinMode(left_motor_direction, OUTPUT);
   Serial.begin(9600);
-  Serial.println("Nrf24L01 Receiver Starting");
+  //Serial.println("Nrf24L01 Receiver Starting");
   myservo.attach(9);
   radio.begin();
   radio.setPALevel(RF24_PA_MIN);
@@ -169,10 +169,10 @@ void loop()
     {speedb=set_speed-30;}
     else
     {speedb=0;}
-
+/*
     Serial.print(" Speed reverse = ");  
     Serial.println(speed+speedb);
-    
+  */  
     digitalWrite(right_motor_direction,LOW);
     analogWrite(right_motor_PWM, speed+speedb); 
     digitalWrite(left_motor_direction, LOW);
@@ -212,10 +212,10 @@ else if (yAxis > 510 || buttonDown==0) {
     {speedb=set_speed+30;}
     else
     {speedb=0;}
-
+/*
     Serial.print(" Speed forward = ");  
     Serial.println(speed+speedb);
-    
+    */
     digitalWrite(right_motor_direction,HIGH);
     analogWrite(right_motor_PWM, speed+speedb); 
     digitalWrite(left_motor_direction, HIGH);
@@ -241,10 +241,11 @@ else if (yAxis > 510 || buttonDown==0) {
   }
   // If joystick stays in middle the motors are not moving
   else {
+    /*
     speed  = 0;
     Serial.print(" Speed zero = ");  
     Serial.println(speed+speedb);
-    
+    */
     digitalWrite(right_motor_direction,LOW);
     analogWrite(right_motor_PWM, speed);
     digitalWrite(left_motor_direction, LOW);
@@ -276,10 +277,11 @@ else if (yAxis > 510 || buttonDown==0) {
     servo_angle = map(xAxis, 0, 1023, 105, 70);
    myservo.write(servo_angle); 
   } 
-      /*
-      Serial.print(" Servo = ");  
+      
+      //Serial.print(" Servo = ");  
       Serial.print(servo_angle);
-      Serial.print("X = ");
+      delay(33);
+     /* Serial.print("X = ");
       Serial.print(xAxis);
       Serial.print(" Y = ");  
       Serial.print(yAxis);
