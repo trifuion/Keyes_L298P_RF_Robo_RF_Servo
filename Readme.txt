@@ -7,6 +7,7 @@ Car parts:
 - Keyes shield L298p motor driver
 - nf24l01 module for radio frequency remote control
 - servo motor SG90 for car steering
+- oled screen 0.96
 
 Remote control parts:
 - Arduino uno
