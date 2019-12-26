@@ -15,6 +15,11 @@ Remote control parts:
 - Funduino joystick shield V1.A
 
 
-USB communication between Arduini - Raspberry to be investigated
+References:
+
+USB communication between Arduino - Raspberry:
 https://www.instructables.com/id/Raspberry-Pi-Arduino-Serial-Communication/
+
+DisablingAutoResetOnSerialConnection - disable Arduino reset when Raspberry Pi initialize the communication with Arduino
+https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection/
 
