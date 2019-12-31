@@ -23,3 +23,5 @@ https://www.instructables.com/id/Raspberry-Pi-Arduino-Serial-Communication/
 DisablingAutoResetOnSerialConnection - disable Arduino reset when Raspberry Pi initialize the communication with Arduino
 https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection/
 
+Deep Learning (CNN - convolutional neural network) reference:
+https://towardsdatascience.com/deeppicar-part-5-lane-following-via-deep-learning-d93acdce6110
